@@ -13,10 +13,10 @@ struct SYST:: _attribute_type<SYST :: ATTRIBUTES_ENUM :: ENUM_ATTR>  \
 
 template<typename AttrSyst>
 concept AttributeSystem =
-	requires 
+	requires (typename AttrSyst::ATTRIBUTES_ENUM en_v)
 	{
 		typename AttrSyst::ATTRIBUTES_ENUM; 
-		typename AttrSyst::ATTRIBUTE_TYPE;
+		//AttrSyst::ATTRIBUTE_TYPE<en_v> ; ???????????????????
 		typename AttrSyst::ATTRIBUTE_DEFAULT_TYPE;
 	};
 
