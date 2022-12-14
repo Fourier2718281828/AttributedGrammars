@@ -2,12 +2,12 @@
 #include <iterator>
 #include <string>
 #include <memory>
-#include "Evaluator.h"
 #include "NonTerminal.h"
 #include "IncorrectInputException.h"
 #include "NonTermB.h"
 #include "NonTermS.h"
 #include "NonTermL.h"
+#include "Evaluator.h"
 
 template<typename T>
 void f(T) = delete;
@@ -49,9 +49,12 @@ std::unique_ptr<INonTerminal> build_tree
 	const std::string int_part(begin, dot_position);
 	const std::string frc_part(++dot_position, end);
 
-	auto pre  = processPart(int_part.begin(), int_part.end());
-	auto post = processPart(frc_part.begin(), frc_part.end());
+	auto left  = processPart(int_part.begin(), int_part.end());
+	auto right = processPart(frc_part.begin(), frc_part.end());
+	
+	auto non_evaled = std::make_unique<S>(left, right);
+	non_evaled->evaluate(evaluator);
 
-	return std::make_unique<S>(pre, post);
+	return non_evaled;
 }
 

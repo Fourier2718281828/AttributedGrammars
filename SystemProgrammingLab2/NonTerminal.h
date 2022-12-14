@@ -1,8 +1,9 @@
 #ifndef _NODE_M_
 #define _NODE_M_
 #include "NumberAttributeSystem.h"
-#include "Evaluator.h"
 #include <memory>
+
+class IEvaluator;
 
 class INonTerminal
 {
@@ -24,4 +25,5 @@ public:
 	virtual void evaluate(const IEvaluator&) = 0;
 };
 
+#include "Evaluator.h"
 #endif // !_NODE_M_

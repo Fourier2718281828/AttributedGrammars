@@ -1,9 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClInclude Include="Digit.h">
-      <Filter>Non Terminals</Filter>
-    </ClInclude>
     <ClInclude Include="NonTerminal.h">
       <Filter>Non Terminals</Filter>
     </ClInclude>
@@ -29,8 +26,12 @@
     <ClInclude Include="NonTermB.h">
       <Filter>Non Terminals</Filter>
     </ClInclude>
-    <ClInclude Include="NonTermS.h" />
-    <ClInclude Include="IncorrectInputException.h" />
+    <ClInclude Include="NonTermS.h">
+      <Filter>Non Terminals</Filter>
+    </ClInclude>
+    <ClInclude Include="IncorrectInputException.h">
+      <Filter>Exceptions</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Non Terminals">

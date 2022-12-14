@@ -1,4 +1,6 @@
-#pragma once
+#ifndef _L_NON_TERM_
+#define _L_NON_TERM_
+
 #include "NonTerminal.h"
 #include "NonTermB.h"
 
@@ -13,8 +15,10 @@ public:
 	child_ptr right_child() override;
 	void evaluate(const IEvaluator&) override;
 public:
-	const value_type& value() const;
-	const length_type& length() const;
+	value_type& value();
+	const value_type value() const;
+	length_type& length();
+	const length_type length() const;
 private:
 	ptr<L> _left_child;
 	ptr<B> _right_child;
@@ -23,11 +27,10 @@ private:
 };
 
 inline L::L(ptr<L> l, ptr<B> b) noexcept :
-	_left_child(l), 
-	_right_child(b), 
+	_left_child(l),
+	_right_child(b),
 	_value(static_cast<value_type>(0)),
 	_length(static_cast<length_type>(0))
-
 {
 }
 
@@ -51,12 +54,24 @@ inline void L::evaluate(const IEvaluator& ev)
 	ev.evaluate(*this);
 }
 
-inline auto L::value() const -> const value_type&
+inline auto L::value() -> value_type&
 {
 	return _value;
 }
 
-inline auto L::length() const -> const length_type&
+inline auto L::value() const -> const value_type
+{
+	return _value;
+}
+
+inline auto L::length() -> length_type&
 {
 	return _length;
 }
+
+inline auto L::length() const -> const length_type
+{
+	return _length;
+}
+
+#endif // !_L_NON_TERM_
