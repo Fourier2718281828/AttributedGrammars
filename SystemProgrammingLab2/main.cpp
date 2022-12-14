@@ -19,7 +19,8 @@ int main()
 		cin >> input;
 		if(!regex_match(input, reg))
 			break;
-		build_tree(input.begin(), std::find(input.begin(), input.end(), '.'), input.end(), StandardEvaluator{});
+		auto ss = build_tree(input.begin(), std::find(input.begin(), input.end(), '.'), input.end(), StandardEvaluator{});
 	}
+
 	return 0;
 }

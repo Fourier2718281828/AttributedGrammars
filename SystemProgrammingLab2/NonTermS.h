@@ -20,7 +20,7 @@ private:
 };
 
 S::S(ptr<L> l, ptr<L> r) noexcept :
-	_left_child(l), _right_child(r), _value()
+	_left_child(l), _right_child(r), _value(static_cast<value_type>(0))
 {
 }
 

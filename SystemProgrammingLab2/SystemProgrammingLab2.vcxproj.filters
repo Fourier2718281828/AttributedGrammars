@@ -30,6 +30,7 @@
       <Filter>Non Terminals</Filter>
     </ClInclude>
     <ClInclude Include="NonTermS.h" />
+    <ClInclude Include="IncorrectInputException.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Non Terminals">
@@ -43,6 +44,9 @@
     </Filter>
     <Filter Include="Evaluators">
       <UniqueIdentifier>{200ae549-102e-4611-b558-54075c9549c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Exceptions">
+      <UniqueIdentifier>{1ad09546-6e1b-4e67-bc78-e40b32a38f97}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

@@ -10,7 +10,7 @@ public:
 	using AttributeSystem = NumberAttributeSystem;
 	using enum_type = AttributeSystem::ATTRIBUTES_ENUM;
 	template<enum_type E>
-	using _typeof = AttributeSystem::ATTRIBUTE_TYPE<E>;
+	using _typeof = AttributeSystem::ATTRIBUTE_TYPE<E>::Type;
 	using value_type = _typeof<enum_type::VALUE>;
 	using length_type = _typeof<enum_type::LENGTH>;
 	template<typename T>

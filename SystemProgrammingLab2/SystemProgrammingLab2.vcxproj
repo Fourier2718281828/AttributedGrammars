@@ -141,6 +141,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="AttributeSystem.h" />
+    <ClInclude Include="IncorrectInputException.h" />
     <ClInclude Include="NonTermB.h" />
     <ClInclude Include="Casting.h" />
     <ClInclude Include="Digit.h" />

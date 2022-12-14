@@ -23,7 +23,11 @@ private:
 };
 
 inline L::L(ptr<L> l, ptr<B> b) noexcept :
-	_left_child(l), _right_child(b)
+	_left_child(l), 
+	_right_child(b), 
+	_value(static_cast<value_type>(0)),
+	_length(static_cast<length_type>(0))
+
 {
 }
 
