@@ -6,8 +6,8 @@
 class B : public INonTerminal
 {
 public:
-	B(const value_type value, const digit_type digit) noexcept :
-		_value(value), _digit(digit)
+	B(const digit_type digit) noexcept :
+		_value(static_cast<value_type>(0)), _digit(digit)
 	{
 	}
 	~B() override = default;

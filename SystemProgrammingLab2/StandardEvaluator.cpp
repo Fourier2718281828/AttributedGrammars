@@ -35,7 +35,7 @@ void StandardEvaluator::evaluate(L& l) const
 
 void StandardEvaluator::evaluate(B& b) const
 {
-	b.value() = b.value() * base();
+	b.value() = static_cast<B::value_type>(b.digit() - '0');
 }
 
 void StandardEvaluator::evaluate(S& s) const
@@ -47,7 +47,7 @@ void StandardEvaluator::evaluate(S& s) const
 
 	const L* const l1 = dynamic_cast<const L*>(left_child.get());
 	const L* const l2 = dynamic_cast<const L*>(right_child.get());
-	s.value() = l1->value() + l2->value() / base_pow(l2->length());
+	s.value() = l1->value() + l2->value() * base_pow(-static_cast<power_type>(l2->length()));
 
 }
 

@@ -4,7 +4,7 @@
 class StandardEvaluator : public IEvaluator
 {
 private:
-	using power_type = size_t;
+	using power_type = int;
 public:
 	StandardEvaluator(const INonTerminal::value_type base);
 	~StandardEvaluator() override = default;

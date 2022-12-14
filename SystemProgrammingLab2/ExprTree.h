@@ -18,11 +18,9 @@ INonTerminal::ptr<L> processPart(Itor beg, const Itor end)
 	if(beg == end)
 		throw IncorrectInputException("Pre- and post-dot number parts cannot be empty.");
 
-	auto to_num = [](const Itor::value_type ch) { return ch - '0'; };
-	auto read_b = [&to_num](const Itor::value_type ch)
+	auto read_b = [](const Itor::value_type ch)
 	{
-		auto num = to_num(ch);
-		return std::make_shared<B>(static_cast<B::value_type>(num), ch);
+		return std::make_shared<B>(ch);
 	};
 
 	auto fst_b = read_b(*beg++);

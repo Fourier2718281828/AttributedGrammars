@@ -59,15 +59,13 @@ inline std::string L::view() const
 {
 	auto lc = _left_child;
 	auto rc = _right_child;
+
 	if (!lc)
-	{
-		return std::string("L -> ") + rc->view();
-	}
+		return std::string("L(v = ") + std::to_string(value()) + ", l = " + std::to_string(length()) +
+		std::string(") -> ") + rc->view();
 	else
-	{
 		return std::string("L(v = ") + std::to_string(value()) + ", l = " + std::to_string(length()) +
 			std::string(") -> [") + lc->view() + ", " + rc->view() + ']';
-	}
 }
 
 inline auto L::value() -> value_type&
