@@ -9,6 +9,7 @@ public:
 	{
 		VALUE,
 		LENGTH,
+		DIGIT,
 	};
 private:
 	template<ATTRIBUTES_ENUM _Attr>
@@ -27,5 +28,6 @@ struct NumberAttributeSystem::_attribute_type
 
 ATTRIBUTE_TYPEDEF(NumberAttributeSystem, VALUE, double)
 ATTRIBUTE_TYPEDEF(NumberAttributeSystem, LENGTH, size_t)
+ATTRIBUTE_TYPEDEF(NumberAttributeSystem, DIGIT, char)
 
 #endif // !_ATTRIBUTE_SYSTEM_M_

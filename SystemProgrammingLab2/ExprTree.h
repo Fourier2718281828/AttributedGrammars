@@ -22,9 +22,9 @@ INonTerminal::ptr<L> processPart(Itor beg, const Itor end)
 	auto read_b = [&to_num](const Itor::value_type ch)
 	{
 		auto num = to_num(ch);
-		return std::make_shared<B>(static_cast<B::value_type>(num));
+		return std::make_shared<B>(static_cast<B::value_type>(num), ch);
 	};
-	//auto fst_digit = to_num(*beg++);
+
 	auto fst_b = read_b(*beg++);
 	auto curr_l = std::make_shared<L>(fst_b);
 

@@ -9,6 +9,12 @@ using std::string;
 using std::regex;
 using std::regex_match;
 using std::find;
+using std::ostream;
+
+ostream& operator<<(ostream& o, const INonTerminal& nt)
+{
+	return o << nt.view();
+}
 
 int main()
 {
@@ -18,12 +24,11 @@ int main()
 	while (true)
 	{
 		cin >> input;
-		/*if(!regex_match(input, reg))
-			break;*/
-		auto a = processPart(input.begin(), input.end());
-		//a->evaluate(StandardEvaluator{ phi });
-		//cout << a->value() << '\n';
-		//auto ss = build_tree(input.begin(), std::find(input.begin(), input.end(), '.'), input.end(), StandardEvaluator{phi});
+		if(!regex_match(input, reg))
+			break;
+		
+		auto ss = build_tree(input.begin(), std::find(input.begin(), input.end(), '.'), input.end(), StandardEvaluator{phi});
+		cout << *ss << '\n';
 		//const S& res = dynamic_cast<S&>(*ss);
 		//cout << "res = " << res.value() << '\n';
 	}

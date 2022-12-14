@@ -14,6 +14,7 @@ public:
 	child_ptr  left_child() override;
 	child_ptr right_child() override;
 	void evaluate(const IEvaluator&) override;
+	std::string view() const override;
 public:
 	value_type& value();
 	const value_type value() const;
@@ -52,6 +53,20 @@ inline auto L::right_child() -> child_ptr
 inline void L::evaluate(const IEvaluator& ev)
 {
 	ev.evaluate(*this);
+}
+
+inline std::string L::view() const
+{
+	auto lc = _left_child;
+	auto rc = _right_child;
+	if (!lc)
+	{
+		return std::string("L -> ") + rc->view();
+	}
+	else
+	{
+		return std::string("L -> [") + lc->view() + ", " + rc->view() + ']';
+	}
 }
 
 inline auto L::value() -> value_type&

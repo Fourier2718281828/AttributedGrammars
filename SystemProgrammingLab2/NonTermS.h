@@ -16,6 +16,7 @@ public:
 	child_ptr  left_child() override;
 	child_ptr right_child() override;
 	void evaluate(const IEvaluator&) override;
+	std::string view() const override;
 public:
 	value_type& value() noexcept;
 	const value_type& value() const noexcept;
@@ -43,6 +44,12 @@ inline auto S::right_child() -> child_ptr
 inline void S::evaluate(const IEvaluator& ev)
 {
 	ev.evaluate(*this);
+}
+
+inline std::string S::view() const
+{
+	return std::string("S(v = ") + std::to_string(value()) + ')' + ':' + std::string("\n{\n") +
+		_left_child->view() + '\n' + _right_child->view() + "\n}";
 }
 
 inline auto S::value() noexcept -> value_type&

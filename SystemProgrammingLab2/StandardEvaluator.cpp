@@ -12,22 +12,24 @@ StandardEvaluator::StandardEvaluator(const INonTerminal::value_type base) :
 
 void StandardEvaluator::evaluate(L& l) const
 {
-	auto left_child = l.left_child();	left_child->evaluate(*this);
-
-	if (const B* const b = dynamic_cast<const B*>(left_child.get()); b)
+	auto left_child = l.left_child();
+	auto right_child = l.right_child();
+	right_child->evaluate(*this);
+	
+	if (left_child)
 	{
-		l.value() = b->value();
-		l.length() = 1;
+		left_child->evaluate(*this);
+		const L& const l1 = dynamic_cast<const L&>(*left_child);
+		const B& const b1 = dynamic_cast<const B&>(*right_child);
+
+		l.value() = base() * l1.value() + b1.value();
+		l.length() = l1.length() + 1;
 	}
 	else
 	{
-		auto right_child = l.right_child();
-		right_child->evaluate(*this);
-		const L* const l1 = dynamic_cast<const L*>(left_child.get());
-		const B* const b1 = dynamic_cast<const B*>(right_child.get());
-
-		l.value() = base() * l1->value() + b1->value();
-		l.length() = l1->length() + 1;
+		const B& b = dynamic_cast<const B&>(*right_child);
+		l.value() = b.value();
+		l.length() = 1;
 	}
 }
 
