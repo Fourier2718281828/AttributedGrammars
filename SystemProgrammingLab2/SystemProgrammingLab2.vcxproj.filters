@@ -1,8 +1,54 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClInclude Include="AttributeSystem.h" />
-    <ClInclude Include="Node.h" />
-    <ClInclude Include="NumberAttributeSystem.h" />
+    <ClInclude Include="Digit.h">
+      <Filter>Non Terminals</Filter>
+    </ClInclude>
+    <ClInclude Include="NonTerminal.h">
+      <Filter>Non Terminals</Filter>
+    </ClInclude>
+    <ClInclude Include="ExprTree.h" />
+    <ClInclude Include="NonTermL.h">
+      <Filter>Non Terminals</Filter>
+    </ClInclude>
+    <ClInclude Include="NumberAttributeSystem.h">
+      <Filter>Attribute Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="AttributeSystem.h">
+      <Filter>Attribute Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="Casting.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Evaluator.h">
+      <Filter>Evaluators</Filter>
+    </ClInclude>
+    <ClInclude Include="StandardEvaluator.h">
+      <Filter>Evaluators</Filter>
+    </ClInclude>
+    <ClInclude Include="NonTermB.h">
+      <Filter>Non Terminals</Filter>
+    </ClInclude>
+    <ClInclude Include="NonTermS.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Non Terminals">
+      <UniqueIdentifier>{549d0579-59e8-4107-ba66-9080927160bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Attribute Systems">
+      <UniqueIdentifier>{6361ba16-2947-45bf-a418-c7b04bbd32b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{b9bfe826-8e8c-4997-b2c3-352f0e6bba1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Evaluators">
+      <UniqueIdentifier>{200ae549-102e-4611-b558-54075c9549c1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="StandardEvaluator.cpp">
+      <Filter>Evaluators</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

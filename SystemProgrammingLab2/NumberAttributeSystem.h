@@ -1,7 +1,6 @@
 #ifndef _ATTRIBUTE_SYSTEM_M_
 #define _ATTRIBUTE_SYSTEM_M_
 #include "AttributeSystem.h"
-#include <concepts>
 
 struct NumberAttributeSystem
 {
@@ -23,10 +22,10 @@ public:
 template<NumberAttributeSystem::ATTRIBUTES_ENUM _Attr>
 struct NumberAttributeSystem::_attribute_type
 {
-	using Type = NumberAttributeSystem::UndefinedType;
+	using Type = NumberAttributeSystem::ATTRIBUTE_DEFAULT_TYPE;
 };
 
-ATTRIBUTE_TYPEDEF(NumberAttributeSystem, VALUE, float)
-ATTRIBUTE_TYPEDEF(NumberAttributeSystem, LENGTH, int)
+ATTRIBUTE_TYPEDEF(NumberAttributeSystem, VALUE, double)
+ATTRIBUTE_TYPEDEF(NumberAttributeSystem, LENGTH, size_t)
 
 #endif // !_ATTRIBUTE_SYSTEM_M_
