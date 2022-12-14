@@ -65,7 +65,8 @@ inline std::string L::view() const
 	}
 	else
 	{
-		return std::string("L -> [") + lc->view() + ", " + rc->view() + ']';
+		return std::string("L(v = ") + std::to_string(value()) + ", l = " + std::to_string(length()) +
+			std::string(") -> [") + lc->view() + ", " + rc->view() + ']';
 	}
 }
 
