@@ -9,9 +9,6 @@
 #include "NonTermL.h"
 #include "Evaluator.h"
 
-template<typename T>
-void f(T) = delete;
-
 template<std::forward_iterator Itor>
 INonTerminal::ptr<L> processPart(Itor beg, const Itor end)
 {
